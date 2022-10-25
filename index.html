@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Martha Scales</title>
+    <script type="module" crossorigin src="./assets/main.4e382001.js"></script>
+    <link rel="stylesheet" href="./assets/index.d887153b.css">
+  </head>
+
+  <body class="">
+    <div class="overflow-x-hidden bg-[#FFF8F3]">
+      <header
+        class="fixed z-10 flex w-full justify-end border border-solid border-y-[#FF74BF] bg-[#FFF8F3]"
+      >
+        <div class="flex-none">
+          <div
+            class="dropdown"
+            x-data="{
+            open: false,
+            toggle() {
+                if (this.open) {
+                    return this.close()
+                }
+ 
+                this.$refs.button.focus()
+ 
+                this.open = true
+            },
+            close(focusAfter) {
+                if (! this.open) return
+ 
+                this.open = false
+ 
+                focusAfter && focusAfter.focus()
+            }
+        }"
+            x-on:keydown.escape.prevent.stop="close($refs.button)"
+            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+            x-id="['dropdown-button']"
+          >
+            <label
+              tabindex="0"
+              class="swap-rotate btn swap border-none bg-transparent hover:bg-transparent lg:hidden"
+            >
+              <input class="hidden" type="checkbox" />
+              <svg
+                x-on:click="true"
+                class="swap-off fill-current"
+                width="32"
+                height="32"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"
+                  fill="#1E00FF"
+                />
+              </svg>
+              <svg
+                x-ref="button"
+                x-on:click="toggle()"
+                :aria-expanded="open"
+                :aria-controls="$id('dropdown-button')"
+                class="swap-on fill-current"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#1E00FF"
+                  d="m17.705 7.705l-1.41-1.41L12 10.59L7.705 6.295l-1.41 1.41L10.59 12l-4.295 4.295l1.41 1.41L12 13.41l4.295 4.295l1.41-1.41L13.41 12l4.295-4.295z"
+                />
+              </svg>
+            </label>
+
+            <ul
+              x-ref="panel"
+              x-show="open"
+              x-transition.origin.top.left
+              x-on:click.outside="close($refs.button)"
+              :id="$id('dropdown-button')"
+              tabindex="0"
+              class="dropdown-content menu -ml-16 border-2 border-solid border-[#FF74BF] bg-[#FFF8F3] text-[#1E00FF]"
+            >
+              <li class="hover:bg-[#ff74be5b]">
+                <a href="#project">Projects</a>
+              </li>
+              <li class="hover:bg-[#ff74be5b]">
+                <a href="#aboutme">Who am I?</a>
+              </li>
+
+              <li class="hover:bg-[#ff74be5b]">
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="hidden lg:flex">
+          <ul tabindex="0" class="menu menu-horizontal p-0 text-[#1E00FF]">
+            <li class="rounded-none hover:bg-[#ff74be5b]">
+              <a href="#project">Projects</a>
+            </li>
+            <li class="rounded-none hover:bg-[#ff74be5b]">
+              <a href="#aboutme">Who am I?</a>
+            </li>
+
+            <li class="rounded-none hover:bg-[#ff74be5b]">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <div id="project"></div>
+      <section class="my-20">
+        <div>
+          <h2
+            class="flex justify-center border border-solid border-y-[#FF74BF] py-5 text-5xl italic text-[#1E00FF] md:text-8xl"
+          >
+            PROJECTS
+          </h2>
+        </div>
+        <div class="flex flex-col gap-10 p-5 lg:flex-row">
+          <div
+            class="m-3 mx-auto flex flex-col gap-10 border-2 border-solid border-[#1E00FF] p-3 md:w-2/3 lg:w-1/2"
+          >
+            <div class="lg:relative">
+              <div class="h-auto w-full">
+                <a
+                  href="https://marthascales.dk/kea/04-animation/spil/spil.html"
+                  target="_blank"
+                  ><img
+                    class="border border-solid border-[#1E00FF]"
+                    src="./assets/freebritney.92bf0be8.png"
+                    alt=""
+                /></a>
+              </div>
+
+              <a
+                href="https://marthascales.dk/kea/04-animation/spil/spil.html"
+                target="_blank"
+                ><div
+                  class="h-full w-full bg-[#E7FF36] ease-in lg:absolute lg:top-0 lg:left-0 lg:opacity-0 lg:hover:opacity-100"
+                >
+                  <h4
+                    class="a_link top-[40%] border-x border-b border-solid border-x-[#1E00FF] border-b-[#1E00FF] p-2 text-center text-[#1E00FF] lg:absolute lg:left-[14%] lg:border-none"
+                  >
+                    Free Britney Spil (Animation)
+                  </h4>
+                </div></a
+              >
+            </div>
+
+            <div class="mb-2 border border-solid border-[#1E00FF] bg-[#E7FF36]">
+              <p
+                class="m-auto h-[350px] w-3/4 p-3 text-xs leading-6 text-[#1E00FF] md:text-base md:leading-9 lg:leading-7"
+              >
+                In this course we learned about characterdesign and Javascript.
+                Our task was to create the characters and gamedesign in
+                Illustrator. The finished game had to be developed using HTML,
+                CSS and Javascript.
+              </p>
+              <div class="flex justify-end">
+                <button
+                  class="w-20 translate-x-[85%] translate-y-3 border border-solid border-[#1e00ff7c] bg-[#c7dd1b] p-2 text-center text-xs"
+                ></button>
+                <button
+                  class="w-20 translate-y-4 -translate-x-2 border border-solid border-[#1E00FF] bg-[#E7FF36] p-2 text-xs text-[#1E00FF] hover:-translate-x-[11.5px] hover:translate-y-[11px] hover:bg-[#1E00FF] hover:text-[#E7FF36]"
+                >
+                  <a
+                    href="https://marthascales.dk/kea/04-animation/spil/spil.html"
+                    target="_blank"
+                    >Website</a
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="m-3 mx-auto flex flex-col gap-10 border-2 border-solid border-[#1E00FF] p-3 md:w-2/3 lg:w-1/2"
+          >
+            <div class="lg:relative">
+              <div class="h-auto w-full">
+                <a
+                  href="http://marthascales.dk/kea/09_cms/09_cms_unesco-wp/"
+                  target="_blank"
+                  ><img
+                    class="border border-solid border-[#1E00FF]"
+                    src="./assets/unesco.2b7202cf.png"
+                    alt=""
+                /></a>
+              </div>
+              <a
+                href="http://marthascales.dk/kea/09_cms/09_cms_unesco-wp/"
+                target="_blank"
+              >
+                <div
+                  class="h-full w-full bg-[#FF74BF] ease-in lg:absolute lg:top-0 lg:left-0 lg:opacity-0 lg:hover:opacity-100"
+                >
+                  <h4
+                    class="a_link top-[40%] border-x border-b border-solid border-x-[#1E00FF] border-b-[#1E00FF] p-2 text-center text-[#1E00FF] lg:absolute lg:left-[15%] lg:border-none"
+                  >
+                    Unesco's Verdensmålsskolerne
+                  </h4>
+                </div></a
+              >
+            </div>
+
+            <div class="mb-2 border border-solid border-[#1E00FF] bg-[#FF74BF]">
+              <p
+                class="m-auto h-[350px] w-3/4 p-3 text-xs leading-6 text-[#1E00FF] md:text-base md:leading-9 lg:leading-7"
+              >
+                This is a caseproject, solved in groups of 5. Our case was to
+                come up with a better solution for "Unesco's verdensmålsskoler"
+                information archetecture. The solution had to be built in
+                Wordpress (CMS) using PHP files. We especially had to focus on
+                creating a more user-friendly filtration system.
+              </p>
+              <div class="flex justify-end">
+                <button
+                  class="w-20 translate-x-[85%] translate-y-3 border border-solid border-[#1e00ff7c] bg-[#f751aa] p-2 text-center text-xs"
+                ></button>
+                <button
+                  class="w-20 translate-y-4 -translate-x-2 border border-solid border-[#1E00FF] bg-[#FF74BF] p-2 text-xs text-[#1E00FF] hover:-translate-x-[11.5px] hover:translate-y-[11px] hover:bg-[#1E00FF] hover:text-[#FF74BF]"
+                >
+                  <a
+                    href="http://marthascales.dk/kea/09_cms/09_cms_unesco-wp/"
+                    target="_blank"
+                    >Website</a
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="m-3 mx-auto flex flex-col gap-10 border-2 border-solid border-[#1E00FF] p-3 md:w-2/3 lg:w-1/2"
+          >
+            <div class="lg:relative">
+              <div class="h-auto w-full">
+                <a
+                  href="https://meritfilm.dk/kea/10_eksame/hjemmeside/wordpress/"
+                  target="_blank"
+                >
+                  <img
+                    class="border border-solid border-[#1E00FF]"
+                    src="./assets/eace.84472bce.png"
+                    alt=""
+                /></a>
+              </div>
+              <a
+                href="https://meritfilm.dk/kea/10_eksame/hjemmeside/wordpress/"
+                target="_blank"
+              >
+                <div
+                  class="h-full w-full bg-[#DBE3FD] ease-in hover:opacity-100 lg:absolute lg:top-0 lg:left-0 lg:opacity-0"
+                >
+                  <h4
+                    class="a_link border-x border-b border-solid border-x-[#1E00FF] border-b-[#1E00FF] p-2 text-center text-[#1E00FF] lg:absolute lg:top-[40%] lg:left-[8%] lg:border-none"
+                  >
+                    EACE gum (2. semester examproject)
+                  </h4>
+                </div></a
+              >
+            </div>
+
+            <div class="mb-2 border border-solid border-[#1E00FF] bg-[#DBE3FD]">
+              <p
+                class="m-auto h-[350px] w-3/4 p-3 text-xs leading-6 text-[#1E00FF] md:text-base md:leading-9 lg:leading-7"
+              >
+                For our examproject we worked in a group of 5. We had to find a
+                start-up company and help them redesign their website, produce a
+                video and come up with marketing/SoMe strategies that would
+                boost the company. The ending product was built in Wordpress
+                (CMS) through a childtheme, but developed from the bottom in PHP
+                files using HTML, CSS and Javascript.
+              </p>
+              <div class="flex justify-end">
+                <button
+                  class="w-20 translate-x-[85%] translate-y-3 border border-solid border-[#1e00ff7c] bg-[#9ab1fc] p-2 text-center text-xs"
+                ></button>
+
+                <button
+                  class="w-20 translate-y-4 -translate-x-2 border border-solid border-[#1E00FF] bg-[#DBE3FD] p-2 text-xs text-[#1E00FF] hover:-translate-x-[11.5px] hover:translate-y-[11px] hover:bg-[#1E00FF] hover:text-[#DBE3FD]"
+                >
+                  <a
+                    href="https://meritfilm.dk/kea/10_eksame/hjemmeside/wordpress/"
+                    target="_blank"
+                    >Website</a
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="aboutme"></div>
+      </section>
+      <section class="">
+        <div>
+          <h2
+            class="flex justify-center border border-solid border-y-[#FF74BF] py-5 text-5xl italic text-[#1E00FF] md:text-8xl"
+          >
+            Who am I?
+          </h2>
+        </div>
+        <div class="my-10">
+          <div>
+            <h2
+              class="flex justify-center text-4xl italic text-[#FF74BF] md:text-7xl lg:justify-start lg:px-10 lg:text-8xl"
+            >
+              Martha Linea Printz Scales
+            </h2>
+          </div>
+
+          <div class="gap-5 p-8 lg:flex">
+            <div class="md:m-auto md:w-2/3 lg:w-1/2">
+              <p class="w-full py-8 text-sm lg:text-lg">
+                I find a bit cringey to describe myself.
+                <br />
+                So instead, i got some help from my roomie:
+              </p>
+              <p class="text-sm lg:text-lg">
+                <span class="font-bold"> Asta (Marthas Roomie):</span>
+                <br />
+                <br />
+                <span class="italic">
+                  “Speaking as Marthas roomie, i would say that, Martha is a
+                  person, who always has a lot of things going on in her life. I
+                  know that, because when she is home, she is only there for a
+                  few hours at a time, before she needs to leave to do a job,
+                  hobby or some project.
+                  <br />
+                  <br />
+                  It is also very visible in her interior, where creative and
+                  colorful projects have taken over her room. She is often busy
+                  with DIY projects, and decorates her bed with pillows and
+                  funny korean plushies.
+                  <br />
+                  <br />
+                  Despite being a woman on-the-go, she still manages to be
+                  present, helpful and caring towards the people around her.
+                  <br />
+                  To my delight, she will let me have a taste when trying to
+                  make new interesting asian recipes.
+                  <br />
+                  <br />
+                  All in all i give Martha 5 stars, and would totally recommend
+                  her to others.“</span
+                >
+              </p>
+            </div>
+
+            <div class="m-auto w-2/3 lg:w-1/3">
+              <img
+                class="my-10 border border-solid border-[#1E00FF] lg:my-5"
+                src="./assets/mig.cdafa24e.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="">
+            <div
+              class="mx-auto md:m-auto md:w-2/3 md:border-2 md:border-solid md:border-[#1E00FF] lg:my-10 lg:w-full lg:border-x-transparent"
+            >
+              <div>
+                <div class="mx-auto p-8 lg:w-full">
+                  <div class="mb-10 lg:mx-auto lg:w-1/2">
+                    <h3 class="my-5 text-3xl text-[#FF74BF]">
+                      Me as an intern...
+                    </h3>
+                    <p class="text-sm text-black">
+                      With me as an intern, you will be able to work with a very
+                      cooperative colleague, who enjoys working in teams and
+                      ping-pong ideas back and forth.
+                      <br />
+                      <br />
+                      I often get compliments in group projects for how patient
+                      i am with other people, and that i am able to keep calm
+                      under pressure.
+                      <br />
+                      As a teamplayer myself i also try to compromise my own
+                      ideas, for the sake of creating the best solutions.
+                      <br />
+                      <br />
+                      In my spare time i do cheerleading, and the sport has
+                      given me a lot of tools to use in a work enviroment.
+                      <br />
+                      Cheerleading has tought me to be very dedicated og
+                      thorough with what i am doing, and be able to receive
+                      constructive critisism to improve myself.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="my-10 flex justify-center gap-32">
+                  <div class="hearts hidden w-52 blur-md lg:block">
+                    <img class="opacity-50" src="./assets/pink_heart.c2cb62e3.svg" alt="" />
+                  </div>
+                  <div>
+                    <h4
+                      class="mx-auto my-5 text-2xl italic md:text-lg lg:text-xl"
+                    >
+                      Would you like to learn more?
+                    </h4>
+                    <div class="flex h-10 w-32 self-center bg-[#FF74BF]"></div>
+                    <button
+                      class="mx-auto -translate-y-8 translate-x-2 border border-[#1E00FF] bg-[#1E00FF] py-2 px-5 text-lg text-[#E7FF36] hover:-translate-x-0 hover:-translate-y-10 hover:bg-[#FF74BF] hover:text-[#1E00FF]"
+                    >
+                      <a
+                        href="http://marthascales.dk/kea/portfolio/cv.pdf"
+                        target="_blank"
+                        >Read my CV</a
+                      >
+                    </button>
+                  </div>
+
+                  <div class="hearts_delay hidden w-56 rotate-180 lg:block">
+                    <img
+                      class="opacity-50 blur-md"
+                      src="./assets/pink_heart.c2cb62e3.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mt-10 bg-[#DBE3FD]">
+        <div
+          class="h-[20vh] w-screen bg-gradient-to-b from-[#FFF8F3] to-[#DBE3FD]"
+        ></div>
+
+        <div class="my-20">
+          <h3
+            class="my-10 flex justify-center text-5xl italic text-[#FF74BF] md:text-6xl lg:text-7xl"
+          >
+            My Skills
+          </h3>
+          <div class="flex gap-5 p-5 md:place-content-center">
+            <div class="w-auto p-3 md:w-[500px]">
+              <img src="./assets/graf.553d14cb.png" alt="" />
+            </div>
+
+            <div
+              class="flex w-20 flex-col gap-9 md:w-8 md:gap-[50px] lg:w-10 lg:gap-[43px]"
+            >
+              <img src="./assets/expert.e80ccddd.svg" alt="expert level" />
+              <img src="./assets/advanced.6c04957b.svg" alt="advanced level" />
+
+              <img src="./assets/intermediate.3c39feef.svg" alt="intermediate level" />
+              <img src="./assets/elementary.07332835.svg" alt="elementary level" />
+              <img src="./assets/beginner.9ff2835a.svg" alt="beginner level" />
+            </div>
+          </div>
+        </div>
+        <div class="pb-20 lg:grid lg:grid-cols-2 lg:py-36">
+          <div class="md:mx-auto md:w-1/2 lg:w-2/3">
+            <svg
+              class="md:h-14 md:w-14"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#FF74BF"
+                d="M5 18v-8l1.95-4h4.201l-1.95 4H11v8H5Zm1-7.77V17h4v-6H7.6l1.951-4H7.576L6 10.23ZM12 18v-8l1.95-4h4.201l-1.95 4H18v8h-6Zm1-7.77V17h4v-6h-2.4l1.951-4h-1.975L13 10.23Z"
+              />
+            </svg>
+            <div class="">
+              <h3
+                class="text-center text-3xl italic text-[#FF74BF] md:text-5xl"
+              >
+                I hope to make creative solutions, that can benefit the daily
+                life on the web.
+              </h3>
+            </div>
+            <div class="flex justify-end">
+              <svg
+                class="md:h-14 md:w-14"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#FF74BF"
+                  d="M18 6v8l-1.95 4h-4.201l1.95-4H12V6h6Zm-1 7.77V7h-4v6h2.4l-1.951 4h1.975L17 13.77ZM11 6v8l-1.95 4H4.848l1.95-4H5V6h6Zm-1 7.77V7H6v6h2.4l-1.951 4h1.975L10 13.77Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="">
+            <img class="mx-auto grid w-52 lg:w-72" src="./assets/me.fe814553.svg" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <footer id="contact" class="bg-[#1E00FF] p-5">
+        <div class="bounce">
+          <h3 class="ml-5 text-2xl italic text-[#E7FF36] lg:text-4xl">
+            Contact
+          </h3>
+          <div class="m-5 border border-solid border-[#DBE3FD] p-5">
+            <div class="flex">
+              <div
+                class="my-auto flex flex-col gap-2 text-xs font-bold text-[#E7FF36] md:text-lg lg:text-xl"
+              >
+                <p>Martha Linea Printz Scales</p>
+                <p>+45 20 82 18 22</p>
+                <address class="not-italic">
+                  <a
+                    class="not_a"
+                    href="mailto:marthascales1998@hotmail.com"
+                    target="_blank"
+                    >marthascales1998@hotmail.com</a
+                  >
+                </address>
+              </div>
+              <div
+                class="m-auto grid grid-cols-2 grid-rows-2 md:flex md:gap-8 lg:gap-10"
+              >
+                <div class="m-2">
+                  <a
+                    href="https://www.facebook.com/martha.scales.7/"
+                    target="_blank"
+                  >
+                    <svg
+                      class="md:h-12 md:w-12 lg:h-16 lg:w-16"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="#E7FF36"
+                        d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div class="m-2">
+                  <a
+                    href="https://www.linkedin.com/in/martha-linea-printz-scales-9b7b49207/ "
+                    target="_blank"
+                  >
+                    <svg
+                      class="md:h-12 md:w-12 lg:h-16 lg:w-16"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="#E7FF36"
+                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div class="m-2">
+                  <a
+                    href="https://www.instagram.com/martha_scales/?next=https%3A%2F%2Fwww.instagram.com%2F%3F__coig_login%3D1"
+                    target="_blank"
+                  >
+                    <svg
+                      class="md:h-12 md:w-12 lg:h-16 lg:w-16"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        fill="#E7FF36"
+                        d="M349.33 69.33a93.62 93.62 0 0 1 93.34 93.34v186.66a93.62 93.62 0 0 1-93.34 93.34H162.67a93.62 93.62 0 0 1-93.34-93.34V162.67a93.62 93.62 0 0 1 93.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32Z"
+                      />
+                      <path
+                        fill="#E7FF36"
+                        d="M377.33 162.67a28 28 0 1 1 28-28a27.94 27.94 0 0 1-28 28ZM256 181.33A74.67 74.67 0 1 1 181.33 256A74.75 74.75 0 0 1 256 181.33m0-37.33a112 112 0 1 0 112 112a112 112 0 0 0-112-112Z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div class="m-2">
+                  <a
+                    href="https://www.pinterest.dk/marthascales/"
+                    target="_blank"
+                  >
+                    <svg
+                      class="md:h-12 md:w-12 lg:h-16 lg:w-16"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="#E7FF36"
+                        d="M9.04 21.54c.96.29 1.93.46 2.96.46a10 10 0 0 0 10-10A10 10 0 0 0 12 2A10 10 0 0 0 2 12c0 4.25 2.67 7.9 6.44 9.34c-.09-.78-.18-2.07 0-2.96l1.15-4.94s-.29-.58-.29-1.5c0-1.38.86-2.41 1.84-2.41c.86 0 1.26.63 1.26 1.44c0 .86-.57 2.09-.86 3.27c-.17.98.52 1.84 1.52 1.84c1.78 0 3.16-1.9 3.16-4.58c0-2.4-1.72-4.04-4.19-4.04c-2.82 0-4.48 2.1-4.48 4.31c0 .86.28 1.73.74 2.3c.09.06.09.14.06.29l-.29 1.09c0 .17-.11.23-.28.11c-1.28-.56-2.02-2.38-2.02-3.85c0-3.16 2.24-6.03 6.56-6.03c3.44 0 6.12 2.47 6.12 5.75c0 3.44-2.13 6.2-5.18 6.2c-.97 0-1.92-.52-2.26-1.13l-.67 2.37c-.23.86-.86 2.01-1.29 2.7v-.03Z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
