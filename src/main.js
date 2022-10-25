@@ -1,6 +1,21 @@
 import "./style.css";
 /* Import af Motion One bibliotek */
 import { animate, stagger, inView, scroll, timeline } from "motion"
+inView (
+    animate(
+        ".bounce", {
+            scale:  [0.5, 1.1 , 1],
+            
+      
+        },
+        {
+            duration: 1,
+            delay: 0.5
+            
+        }
+        
+    )
+)
 animate(
     ".loading", {
         translateX:  [-183.5, -183.5],
@@ -60,3 +75,8 @@ animate (
     
     }
 )
+import Alpine from 'alpinejs'
+ 
+window.Alpine = Alpine
+ 
+Alpine.start()
